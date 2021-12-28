@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fav-quotes</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" >
+</head>
+    <nav style="margin-top:25px;margin-left:45px">
+      <a class="btn btn-primary" href="{{ url_for('quotes') }}">Add a quote</a>
+    </nav>
+    <br>
+<body>
+    <div class="container theme-showcase" role="main">
+
+      <div style="color:#fff; background-color:orange", class="jumbotron">
+        <h1>Favorite Quotes</h1>
+      </div>
+
+      <div style ="color:#fff;background-color:blue">
+        <h1> Quotes Author </h1>
+      </div>
+
+      <div style ="color:#fff;font-size:28px;background-color:green">
+        <p> Quotes</p>
+        {% if quote %}
+        <p>{{ quote }}</p>
+        {% else %}
+        <p>No text here</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <ul> <!-- ul is for encapturing lists -->
+        <p>My favorite fruits are:</p>
+        {% for fruit in fruits %} <!-- For loop -->
+        <li>{{ fruit }}</li> <!-- li lists items -->
+        {% endfor%}
+    </ul>
+</body>
+</html>
